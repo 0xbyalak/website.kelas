@@ -224,10 +224,229 @@ header {
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); 
 }
 
+/* Custom styles for schedule section */
+.schedule-filter .form-select {
+  padding: 0.75rem;
+  border-radius: 8px;
+  border: 1px solid #dee2e6;
+  font-size: 1rem;
+}
+
+.card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border-radius: 12px;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+}
+
+.badge {
+  padding: 0.5em 1em;
+  border-radius: 6px;
+  font-weight: 500;
+}
+
+.bi {
+  font-size: 1.1rem;
+  color: #6c757d;
+}
+
+@media (max-width: 767.98px) {
+  .schedule-filter {
+      position: sticky;
+      top: 70px;
+      z-index: 100;
+      background: none;
+      padding: 1rem 0;
+  }
+}
+
+/* Organizational Tree Styles */
+.org-tree {
+  padding: 20px;
+  position: relative;
+}
+
+.level {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  padding: 20px 0;
+}
+
+/* Lines connecting the cards */
+.level::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 2px;
+  height: 20px;
+  background: #343a40;
+}
+
+.level:first-child::before {
+  display: none;
+}
+
+.level-3 {
+  padding-top: 40px;
+}
+
+.member-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  width: 100%;
+}
+
+.department {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  position: relative;
+}
+
+/* Horizontal lines for level 3 */
+.level-3::before {
+  width: 80%;
+  height: 2px;
+  left: 10%;
+}
+
+/* Vertical lines for departments */
+.department::before {
+  content: '';
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  width: 2px;
+  height: 20px;
+  background: #343a40;
+}
+
+/* Member Card Styles */
+.member-card {
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  width: 280px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.member-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.member-photo {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.member-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.member-card:hover .member-photo img {
+  transform: scale(1.05);
+}
+
+.member-info {
+  padding: 20px;
+  text-align: center;
+}
+
+.member-info h4 {
+  margin: 0;
+  color: #2c3e50;
+  font-size: 1.2rem;
+}
+
+.position {
+  color: #343a40;
+  font-weight: 500;
+  margin: 5px 0;
+}
+
+.nim {
+  color: #7f8c8d;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .member-wrapper {
+      gap: 20px;
+  }
+  
+  .member-card {
+      width: 240px;
+  }
+}
+
+@media (max-width: 992px) {
+  .member-wrapper {
+      flex-direction: column;
+      align-items: center;
+      gap: 40px;
+  }
+
+  .department {
+      width: 100%;
+      align-items: center;
+  }
+
+  /* Adjust lines for mobile */
+  .level-3::before {
+      height: 100%;
+      width: 2px;
+      left: 50%;
+      top: -20px;
+  }
+
+  .department::before {
+      display: none;
+  }
+
+  .member-card {
+      width: 280px;
+  }
+}
+
+@media (max-width: 576px) {
+  .member-card {
+      width: 100%;
+      max-width: 320px;
+  }
+}
+
+/* Animation classes */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.5s ease;
+}
+
+.animate-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 /* Bagian Kontak */
 #kontak {
-  padding-top: 40px;
-  padding-bottom: 40px;
+  padding-top: 20px;
+  padding-bottom: 20px;
   background-color: #f8f9fa;
 }
 
@@ -289,11 +508,9 @@ button:hover {
   color: #343a40;
 }
 
-
-
 /* Menampilkan pesan tanggapan */
 .response-message {
-  margin-top: 20px;
+  margin-top: 10px;
   font-size: 16px;
   color: #28a745;
   text-align: center;

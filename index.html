@@ -81,7 +81,7 @@
 <!--contentl-->
 <div class="container">
   <div class="header">
-      <h1>CONTENT</h1>
+      <h1>Content</h1>
   </div>
   <div class="categories">
       <div class="category-card">
@@ -89,29 +89,360 @@
           <img class="card-img-top" src="img/kelas.jpg" alt="Materi 1">
         </div>
           <i class="fas fa-code"></i>
-          <a href="person/index.html" type="button" class="btn btn-outline-primary">personil</a>
+          <h3>Personil</h3>
+          <p>Kenali teman-teman Aerosynth lebih dekat.</p>
+          <a href="person/index.html" type="button" class="btn btn-outline-primary">view</a>
       </div>
       <div class="category-card">
         <div class="card mb-4">
           <img class="card-img-top" src="img/projek.jpg" alt="Materi 1">
         </div>
           <i class="fas fa-globe"></i>
-          <a href="projek/index.html" type="button" class="btn btn-outline-primary">projek</a>
+          <h3>Projek</h3>
+          <p>Lihat karya terbaik dari mahasiswa Aerosynth.</p>
+          <a href="projek/index.html" type="button" class="btn btn-outline-primary">view</a>
       </div>
       <div class="category-card">
         <div class="card mb-4">
           <img class="card-img-top" src="img/toko.jpg" alt="Materi 1">
         </div>
           <i class="fas fa-laptop-code"></i>
-          <a href="toko/toko.html" type="button" class="btn btn-outline-primary">toko</a>
+          <h3>Toko</h3>
+          <p>Kunjungi toko kami untuk melihat dan membeli produk-produk kami.</p>
+          <a href="toko/toko.html" type="button" class="btn btn-outline-primary">view</a>
       </div>
   </div>
 </div>
 
+<!-- Jadwal perkuliahan -->
+<section id="schedule" class="section bg-light">
+  <div class="container">
+    <div class="header">
+      <h1>Jadwal Perkuliahan</h1>
+  </div>
+      <!-- Schedule Filter -->
+      <div class="schedule-filter animate-on-scroll">
+          <div class="btn-group-vertical d-md-none w-100 mb-4">
+              <select class="form-select" id="dayFilter">
+                  <option value="all">Semua Hari</option>
+                  <option value="Senin">Senin</option>
+                  <option value="Selasa">Selasa</option>
+                  <option value="Rabu">Rabu</option>
+                  <option value="Kamis">Kamis</option>
+                  <option value="Jumat">Jumat</option>
+              </select>
+          </div>
+          <div class="btn-group d-none d-md-flex w-100">
+              <button class="btn btn-primary active" data-filter="all">Semua</button>
+              <button class="btn btn-primary" data-filter="Senin">Senin</button>
+              <button class="btn btn-primary" data-filter="Selasa">Selasa</button>
+              <button class="btn btn-primary" data-filter="Rabu">Rabu</button>
+              <button class="btn btn-primary" data-filter="Kamis">Kamis</button>
+              <button class="btn btn-primary" data-filter="Jumat">Jumat</button>
+          </div>
+      </div>
+
+      <!-- Schedule Desktop View -->
+      <div class="table-responsive d-none d-md-block animate-on-scroll">
+          <table class="table table-hover">
+              <thead class="table-primary">
+                  <tr>
+                      <th>Hari</th>
+                      <th>Mata Kuliah</th>
+                      <th>Jam</th>
+                      <th>Dosen</th>
+                  </tr>
+              </thead>
+              <tbody id="scheduleTableDesktop">
+                  <tr data-day="Senin">
+                      <td>Senin</td>
+                      <td>Algoritma dan Struktur Data</td>
+                      <td>07:00 - 10:50</td>
+                      <td>Indra Kurniawan S.T.,M.Eng.</td>
+                  </tr>
+                  <tr data-day="Selasa">
+                      <td>Selasa</td>
+                      <td>Pendidikan Pancasila</td>
+                      <td>07:30 - 08:200</td>
+                      <td>Ninik sri Rahayu Wilujeng,S.H.,M.H.</td>
+                  </tr>
+                  <tr data-day="Selasa">
+                    <td>Selasa</td>
+                    <td>Aljabar Linear</td>
+                    <td>12:30 - 13:20</td>
+                    <td>Khoirunnisa,M.Mat.</td>
+                </tr>
+                <tr data-day="Selasa">
+                  <td>Selasa</td>
+                  <td>Bahasa Indonesia</td>
+                  <td>14:30 - 15:00</td>
+                  <td>-</td>
+              </tr>
+                  <tr data-day="Rabu">
+                      <td>Rabu</td>
+                      <td>Jaringan Komputer Dasar</td>
+                      <td>12:30 - 15:50</td>
+                      <td>Agus Priyo Utomo,S.ST.,M.TR.Kom.</td>
+                  </tr>
+                  <tr data-day="Jumat">
+                    <td>Jumat</td>
+                    <td>Rangkaian Elektronika Digital</td>
+                    <td>07:30 - 10:50</td>
+                    <td>Arif Fahmin,S.T.,M.T.</td>
+                </tr>
+                <tr data-day="Jumat">
+                  <td>Jumat</td>
+                  <td>Basis Data</td>
+                  <td>12:30 - 15:50</td>
+                  <td>Alfin Hidayat,S.T.,M.T.</td>
+              </tr>
+              </tbody>
+          </table>
+      </div>
+
+      <!-- Schedule Mobile View -->
+      <div class="d-md-none animate-on-scroll">
+          <div class="row g-3" id="scheduleCardsMobile">
+              <div class="col-12" data-day="Senin">
+                  <div class="card h-100 border-0 shadow-sm">
+                      <div class="card-body">
+                          <div class="d-flex justify-content-between align-items-center mb-2">
+                              <h5 class="card-title mb-0">Algoritma dan Struktur Data</h5>
+                              <span class="badge bg-primary">Senin</span>
+                          </div>
+                          <div class="d-flex align-items-center mb-2">
+                              <i class="bi bi-clock me-2"></i>
+                              <span>07:00 - 10:50</span>
+                          </div>
+                          <div class="d-flex align-items-center">
+                              <i class="bi bi-person me-2"></i>
+                              <span>Indra Kurniawan S.T.,M.Eng.</span>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+
+              <div class="col-12" data-day="Selasa">
+                  <div class="card h-100 border-0 shadow-sm">
+                      <div class="card-body">
+                          <div class="d-flex justify-content-between align-items-center mb-2">
+                              <h5 class="card-title mb-0">Pendidikan Pancasila</h5>
+                              <span class="badge bg-primary">Selasa</span>
+                          </div>
+                          <div class="d-flex align-items-center mb-2">
+                              <i class="bi bi-clock me-2"></i>
+                              <span>07:30 - 08:200</span>
+                          </div>
+                          <div class="d-flex align-items-center">
+                              <i class="bi bi-person me-2"></i>
+                              <span>Ninik sri Rahayu Wilujeng,S.H.,M.H.</span>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+
+              <div class="col-12" data-day="Selasa">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <h5 class="card-title mb-0">Aljabar Linear</h5>
+                            <span class="badge bg-primary">Selasa</span>
+                        </div>
+                        <div class="d-flex align-items-center mb-2">
+                            <i class="bi bi-clock me-2"></i>
+                            <span>12:30 - 13:20</span>
+                        </div>
+                        <div class="d-flex align-items-center">
+                            <i class="bi bi-person me-2"></i>
+                            <span>Khoirunnisa,M.Mat.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12" data-day="Selasa">
+              <div class="card h-100 border-0 shadow-sm">
+                  <div class="card-body">
+                      <div class="d-flex justify-content-between align-items-center mb-2">
+                          <h5 class="card-title mb-0">Bahasa Indonesia</h5>
+                          <span class="badge bg-primary">Selasa</span>
+                      </div>
+                      <div class="d-flex align-items-center mb-2">
+                          <i class="bi bi-clock me-2"></i>
+                          <span>14:30 - 15:00</span>
+                      </div>
+                      <div class="d-flex align-items-center">
+                          <i class="bi bi-person me-2"></i>
+                          <span>-</span>
+                      </div>
+                  </div>
+              </div>
+          </div>
+
+              <div class="col-12" data-day="Rabu">
+                  <div class="card h-100 border-0 shadow-sm">
+                      <div class="card-body">
+                          <div class="d-flex justify-content-between align-items-center mb-2">
+                              <h5 class="card-title mb-0">Jaringan Komputer Dasar</h5>
+                              <span class="badge bg-primary">Rabu</span>
+                          </div>
+                          <div class="d-flex align-items-center mb-2">
+                              <i class="bi bi-clock me-2"></i>
+                              <span>12:30 - 15:50</span>
+                          </div>
+                          <div class="d-flex align-items-center">
+                              <i class="bi bi-person me-2"></i>
+                              <span>Agus Priyo Utomo,S.ST.,M.TR.Kom.a</span>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+
+              <div class="col-12" data-day="Jumat">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <h5 class="card-title mb-0">Rangkaian Elektronika Digital</h5>
+                            <span class="badge bg-primary">Jumat</span>
+                        </div>
+                        <div class="d-flex align-items-center mb-2">
+                            <i class="bi bi-clock me-2"></i>
+                            <span>07:30 - 10:50</span>
+                        </div>
+                        <div class="d-flex align-items-center">
+                            <i class="bi bi-person me-2"></i>
+                            <span>Arif Fahmin,S.T.,M.T.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12" data-day="Jumat">
+              <div class="card h-100 border-0 shadow-sm">
+                  <div class="card-body">
+                      <div class="d-flex justify-content-between align-items-center mb-2">
+                          <h5 class="card-title mb-0">Basis Data</td>
+                            <td>12:30 - 15:50</td>
+                            <td>Alfin Hidayat,S.T.,M.T.</h5>
+                          <span class="badge bg-primary">Jumat</span>
+                      </div>
+                      <div class="d-flex align-items-center mb-2">
+                          <i class="bi bi-clock me-2"></i>
+                          <span>12:30 - 15:50</span>
+                      </div>
+                      <div class="d-flex align-items-center">
+                          <i class="bi bi-person me-2"></i>
+                          <span>Alfin Hidayat,S.T.,M.T.</span>
+                      </div>
+                  </div>
+              </div>
+          </div>
+
+          </div>
+      </div>
+  </div>
+
+  <!--
+  --pengurus kelas--
+</section>
+<section id="organization" class="section bg-light">
+  <div class="container">
+    <div class="header">
+      <h1>Pengurus Kelas</h1>
+  </div>
+      -- Org Tree Structure --
+      <div class="org-tree">
+          <-- Level 1 - Ketua --
+          <div class="level level-1">
+              <div class="member-card animate-on-scroll">
+                  <div class="member-photo">
+                      <img src="personil/img/imam.jpg" alt="Ketua">
+                  </div>
+                  <div class="member-info">
+                      <h4>Imam Hidayatulloh</h4>
+                      <p class="position">Ketua Kelas</p>
+                      <p class="nim">2023001</p>
+                  </div>
+              </div>
+          </div>
+
+          <-- Level 2 - Wakil Ketua --
+          <div class="level level-2">
+              <div class="member-card animate-on-scroll">
+                  <div class="member-photo">
+                      <img src="personil/img/bima.jpg" alt="Wakil Ketua">
+                  </div>
+                  <div class="member-info">
+                      <h4>Bima Sakti</h4>
+                      <p class="position">Wakil Ketua</p>
+                      <p class="nim">2023002</p>
+                  </div>
+              </div>
+          </div>
+
+          <-- Level 3 - Sekretaris & Bendahara --
+          <div class="level level-3">
+              <div class="member-wrapper">
+                  <-- Sekretaris --
+                  <div class="department">
+                      <div class="member-card animate-on-scroll">
+                          <div class="member-photo">
+                              <img src="personil/img/via.jpg" alt="Sekretaris 1">
+                          </div>
+                          <div class="member-info">
+                              <h4>Shelomitta</h4>
+                              <p class="position">Sekretaris 1</p>
+                              <p class="nim">2023003</p>
+                          </div>
+                      </div>
+                      <div class="member-card animate-on-scroll">
+                          <div class="member-photo">
+                              <img src="personil/img/intan.jpg" alt="Sekretaris 2">
+                          </div>
+                          <div class="member-info">
+                              <h4>Intan jubaidah</h4>
+                              <p class="position">Sekretaris 2</p>
+                              <p class="nim">2023004</p>
+                          </div>
+                      </div>
+                  </div>
+                  
+                  <-- Bendahara --
+                  <div class="department">
+                      <div class="member-card animate-on-scroll">
+                          <div class="member-photo">
+                              <img src="personil/img/baiti.jpg" alt="Bendahara 1">
+                          </div>
+                          <div class="member-info">
+                              <h4>Baiti Marlin</h4>
+                              <p class="position">Bendahara 1</p>
+                              <p class="nim">2023005</p>
+                          </div>
+                      </div>
+                      <div class="member-card animate-on-scroll">
+                          <div class="member-photo">
+                              <img src="personil/img/dapit.jpg" alt="Bendahara 2">
+                          </div>
+                          <div class="member-info">
+                              <h4>Dapit Muh</h4>
+                              <p class="position">Bendahara 2</p>
+                              <p class="nim">2023006</p>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
+-->
+
 <!--kontak-->
 <section id="kontak" class="py-5 bg-light">
   <div class="container">
-      <h2 class="text-dark text-center">Kirim Pesan atau Tanggapan</h2>
+    <div class="header">
+      <h1>Kirim Pesan atau Tanggapan</h1>
+    </div>
       <form id="contact-form">
           <div class="form-group">
               <label for="name">Nama</label>
@@ -140,5 +471,6 @@
     -->
   
   <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
