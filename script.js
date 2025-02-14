@@ -88,6 +88,26 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
+//struktur kelas
+document.addEventListener('DOMContentLoaded', () => {
+    // Animate positions on load
+    const positions = document.querySelectorAll('.position');
+    positions.forEach(position => {
+        const delay = position.getAttribute('data-delay');
+        setTimeout(() => {
+            position.style.animation = `scaleIn 0.5s ease forwards`;
+        }, delay);
+    });
+
+    // Add click interaction
+    positions.forEach(position => {
+        position.addEventListener('click', () => {
+            positions.forEach(p => p.classList.remove('active'));
+            position.classList.add('active');
+        });
+    });
+});
+
 
 
 // Menangani pengiriman form

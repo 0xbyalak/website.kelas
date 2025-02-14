@@ -8,6 +8,7 @@
   <meta name="keywords" content="Aerosynth, teknik rekayasa komputer, TRK1A, poliwangi">
   <meta name="author" content="Aerosynth">
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
 </head>
@@ -88,7 +89,6 @@
         <div class="card mb-4">
           <img class="card-img-top" src="img/kelas.jpg" alt="Materi 1">
         </div>
-          <i class="fas fa-code"></i>
           <h3>Personil</h3>
           <p>Kenali teman-teman Aerosynth lebih dekat.</p>
           <a href="person/index.html" type="button" class="btn btn-outline-primary">view</a>
@@ -97,7 +97,6 @@
         <div class="card mb-4">
           <img class="card-img-top" src="img/projek.jpg" alt="Materi 1">
         </div>
-          <i class="fas fa-globe"></i>
           <h3>Projek</h3>
           <p>Lihat karya terbaik dari mahasiswa Aerosynth.</p>
           <a href="projek/index.html" type="button" class="btn btn-outline-primary">view</a>
@@ -106,7 +105,6 @@
         <div class="card mb-4">
           <img class="card-img-top" src="img/toko.jpg" alt="Materi 1">
         </div>
-          <i class="fas fa-laptop-code"></i>
           <h3>Toko</h3>
           <p>Kunjungi toko kami untuk melihat dan membeli produk-produk kami.</p>
           <a href="toko/toko.html" type="button" class="btn btn-outline-primary">view</a>
@@ -339,101 +337,53 @@
           </div>
       </div>
   </div>
-
-  <!--
-  --pengurus kelas--
 </section>
-<section id="organization" class="section bg-light">
-  <div class="container">
+
+<!--struktur kelas-->
+<div class="container">
     <div class="header">
-      <h1>Pengurus Kelas</h1>
+      <h1>Kepengurusan</h1>
   </div>
-      -- Org Tree Structure --
-      <div class="org-tree">
-          <-- Level 1 - Ketua --
-          <div class="level level-1">
-              <div class="member-card animate-on-scroll">
-                  <div class="member-photo">
-                      <img src="personil/img/imam.jpg" alt="Ketua">
-                  </div>
-                  <div class="member-info">
-                      <h4>Imam Hidayatulloh</h4>
-                      <p class="position">Ketua Kelas</p>
-                      <p class="nim">2023001</p>
-                  </div>
-              </div>
-          </div>
-
-          <-- Level 2 - Wakil Ketua --
-          <div class="level level-2">
-              <div class="member-card animate-on-scroll">
-                  <div class="member-photo">
-                      <img src="personil/img/bima.jpg" alt="Wakil Ketua">
-                  </div>
-                  <div class="member-info">
-                      <h4>Bima Sakti</h4>
-                      <p class="position">Wakil Ketua</p>
-                      <p class="nim">2023002</p>
-                  </div>
-              </div>
-          </div>
-
-          <-- Level 3 - Sekretaris & Bendahara --
-          <div class="level level-3">
-              <div class="member-wrapper">
-                  <-- Sekretaris --
-                  <div class="department">
-                      <div class="member-card animate-on-scroll">
-                          <div class="member-photo">
-                              <img src="personil/img/via.jpg" alt="Sekretaris 1">
-                          </div>
-                          <div class="member-info">
-                              <h4>Shelomitta</h4>
-                              <p class="position">Sekretaris 1</p>
-                              <p class="nim">2023003</p>
-                          </div>
-                      </div>
-                      <div class="member-card animate-on-scroll">
-                          <div class="member-photo">
-                              <img src="personil/img/intan.jpg" alt="Sekretaris 2">
-                          </div>
-                          <div class="member-info">
-                              <h4>Intan jubaidah</h4>
-                              <p class="position">Sekretaris 2</p>
-                              <p class="nim">2023004</p>
-                          </div>
-                      </div>
-                  </div>
-                  
-                  <-- Bendahara --
-                  <div class="department">
-                      <div class="member-card animate-on-scroll">
-                          <div class="member-photo">
-                              <img src="personil/img/baiti.jpg" alt="Bendahara 1">
-                          </div>
-                          <div class="member-info">
-                              <h4>Baiti Marlin</h4>
-                              <p class="position">Bendahara 1</p>
-                              <p class="nim">2023005</p>
-                          </div>
-                      </div>
-                      <div class="member-card animate-on-scroll">
-                          <div class="member-photo">
-                              <img src="personil/img/dapit.jpg" alt="Bendahara 2">
-                          </div>
-                          <div class="member-info">
-                              <h4>Dapit Muh</h4>
-                              <p class="position">Bendahara 2</p>
-                              <p class="nim">2023006</p>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </div>
-  </div>
+<section>
+  <div class="org-chart">
+    <div class="level level-1">
+        <div class="position" data-delay="0">
+            <i class="fas fa-user-tie"></i>
+            <h3>Ketua</h3>
+        </div>
+    </div>
+    
+    <div class="connector"></div>
+    
+    <div class="level level-2">
+        <div class="position" data-delay="200">
+            <i class="fas fa-user-shield"></i>
+            <h3>Wakil Ketua</h3>
+        </div>
+    </div>
+    
+    <div class="connector"></div>
+    
+    <div class="level level-3">
+        <div class="position" data-delay="400">
+            <i class="fas fa-file-alt"></i>
+            <h3>Sekretaris 1</h3>
+        </div>
+        <div class="position" data-delay="600">
+            <i class="fas fa-file-alt"></i>
+            <h3>Sekretaris 2</h3>
+        </div>
+        <div class="position" data-delay="800">
+            <i class="fas fa-wallet"></i>
+            <h3>Bendahara 1</h3>
+        </div>
+        <div class="position" data-delay="1000">
+            <i class="fas fa-wallet"></i>
+            <h3>Bendahara 2</h3>
+        </div>
+    </div>
+</div>
 </section>
--->
 
 <!--kontak-->
 <section id="kontak" class="py-5 bg-light">
