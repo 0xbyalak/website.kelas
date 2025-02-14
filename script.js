@@ -112,26 +112,30 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Menangani pengiriman form
 document.getElementById('contact-form').addEventListener('submit', function(event) {
-  event.preventDefault();  // Menghentikan refresh halaman saat submit
+    event.preventDefault();  // Menghentikan refresh halaman saat submit
 
-  // Mengambil data dari form
-  const name = document.getElementById('name').value;
-  const email = document.getElementById('email').value;
-  const message = document.getElementById('message').value;
+    // Mengambil data dari form
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const message = document.getElementById('message').value;
 
-  // Validasi form
-  if (name && email && message) {
-      // Menampilkan pesan sukses
-      document.getElementById('response-message').innerText = 'Pesan Anda telah terkirim! Terima kasih atas tanggapan Anda.';
-      document.getElementById('response-message').style.color = 'green';
+    // Validasi form
+    if (name && email && message) {
+            // Mengirim data ke email
+            const mailtoLink = `mailto:byalak.2@gmail.com?subject=Contact Form Submission&body=Name: ${name}%0AEmail: ${email}%0AMessage: ${message}`;
+            window.location.href = mailtoLink;
 
-      // Reset form setelah pengiriman
-      document.getElementById('contact-form').reset();
-  } else {
-      // Menampilkan pesan kesalahan
-      document.getElementById('response-message').innerText = 'Harap lengkapi semua kolom!';
-      document.getElementById('response-message').style.color = 'red';
-  }
+            // Menampilkan pesan sukses
+            document.getElementById('response-message').innerText = 'Pesan Anda telah terkirim! Terima kasih atas tanggapan Anda.';
+            document.getElementById('response-message').style.color = 'green';
+
+            // Reset form setelah pengiriman
+            document.getElementById('contact-form').reset();
+    } else {
+            // Menampilkan pesan kesalahan
+            document.getElementById('response-message').innerText = 'Harap lengkapi semua kolom!';
+            document.getElementById('response-message').style.color = 'red';
+    }
 });
 
 // Smooth Scroll
